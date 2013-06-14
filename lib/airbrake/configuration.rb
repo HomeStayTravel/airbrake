@@ -264,7 +264,7 @@ module Airbrake
     end
 
     def user_attributes=(user_attributes)
-      @user_attributes = validate_user_attributes user_attributes
+      @user_attributes = user_attributes
     end
 
     # Should Airbrake send notifications asynchronously
@@ -325,15 +325,6 @@ module Airbrake
     rescue NameError
       warn "[AIRBRAKE] You can't use the default async handler without girl_friday."\
         " Please make sure you have girl_friday installed."
-    end
-
-    def validate_user_attributes(user_attributes)
-      user_attributes.each do |attribute|
-        next if VALID_USER_ATTRIBUTES.include? attribute
-        warn "[AIRBRAKE] Unsupported user attribute: '#{attribute}'. "\
-          "This attribute will not be shown in the Airbrake UI. "\
-          "Check http://git.io/h6YRpA for more info."
-      end
     end
   end
 end
