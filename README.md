@@ -119,3 +119,8 @@ License
 -------
 
 Airbrake is Copyright © 2008-2013 Airbrake. 
+
+Other
+---
+
+This fork is in use at [Homestay.com](http://www.homestay.com).
